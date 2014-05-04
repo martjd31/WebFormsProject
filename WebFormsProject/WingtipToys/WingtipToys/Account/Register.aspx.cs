@@ -19,6 +19,14 @@ namespace WingtipToys.Account
             if (result.Succeeded)
             {
                 IdentityHelper.SignIn(manager, user, isPersistent: false);
+
+                using (WingtipToys.Logic.ShoppingCartActions usersShoppingCart = new WingtipToys.Logic.ShoppingCartActions())
+                {
+                    String cartId = usersShoppingCart.GetCartId();
+                    usersShoppingCart.MigrateCart(cartId, user.Id);
+                }
+
+
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else 

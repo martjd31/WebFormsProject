@@ -157,6 +157,11 @@
     <Content Include="App_Data\ErrorLog.txt" />
     <Content Include="App_Data\wingtiptoys.mdf" />
     <Content Include="App_Data\wingtiptoys_log.ldf" />
+    <Content Include="Checkout\CheckoutCancel.aspx" />
+    <Content Include="Checkout\CheckoutComplete.aspx" />
+    <Content Include="Checkout\CheckoutError.aspx" />
+    <Content Include="Checkout\CheckoutReview.aspx" />
+    <Content Include="Checkout\CheckoutStart.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Images\boatbig.png" />
@@ -175,25 +180,6 @@
     <Content Include="Images\planepaper.png" />
     <Content Include="Images\planeprop.png" />
     <Content Include="Images\rocket.png" />
-    <Content Include="Images\Thumbs\boatbig.png" />
-    <Content Include="Images\Thumbs\boatpaper.png" />
-    <Content Include="Images\Thumbs\boatsail.png" />
-    <Content Include="Images\Thumbs\busdouble.png" />
-    <Content Include="Images\Thumbs\busgreen.png" />
-    <Content Include="Images\Thumbs\busred.png" />
-    <Content Include="Images\Thumbs\carconvert.png" />
-    <Content Include="Images\Thumbs\carearly.png" />
-    <Content Include="Images\Thumbs\carfast.png" />
-    <Content Include="Images\Thumbs\carfaster.png" />
-    <Content Include="Images\Thumbs\carracer.png" />
-    <Content Include="Images\Thumbs\planeace.png" />
-    <Content Include="Images\Thumbs\planeglider.png" />
-    <Content Include="Images\Thumbs\planepaper.png" />
-    <Content Include="Images\Thumbs\planeprop.png" />
-    <Content Include="Images\Thumbs\rocket.png" />
-    <Content Include="Images\Thumbs\truckbig.png" />
-    <Content Include="Images\Thumbs\truckearly.png" />
-    <Content Include="Images\Thumbs\truckfire.png" />
     <Content Include="Images\truckbig.png" />
     <Content Include="Images\truckearly.png" />
     <Content Include="Images\truckfire.png" />
@@ -208,7 +194,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Images\Thumbs.db" />
-    <Content Include="Images\Thumbs\Thumbs.db" />
+    <Content Include="Checkout\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
@@ -312,6 +298,41 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Checkout\CheckoutCancel.aspx.cs">
+      <DependentUpon>CheckoutCancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutCancel.aspx.designer.cs">
+      <DependentUpon>CheckoutCancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutComplete.aspx.cs">
+      <DependentUpon>CheckoutComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutComplete.aspx.designer.cs">
+      <DependentUpon>CheckoutComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutError.aspx.cs">
+      <DependentUpon>CheckoutError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutError.aspx.designer.cs">
+      <DependentUpon>CheckoutError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutReview.aspx.cs">
+      <DependentUpon>CheckoutReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutReview.aspx.designer.cs">
+      <DependentUpon>CheckoutReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutStart.aspx.cs">
+      <DependentUpon>CheckoutStart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutStart.aspx.designer.cs">
+      <DependentUpon>CheckoutStart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,13 +350,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\PayPalFunctions.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ProductContext.cs" />
-    <Compile Include="Models\ProductDatabaseInitializer..cs" />
+    <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
